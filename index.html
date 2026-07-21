@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium creative growth landing page for small and medium businesses: graphic design, video editing, motion graphics, digital marketing, and Meta Ads management." />
+  <title>Smart Creative Solutions | Grow Your Business</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --bg-2: #0b172a;
+      --panel: rgba(13, 24, 43, 0.72);
+      --panel-2: rgba(18, 31, 54, 0.82);
+      --text: #eef4ff;
+      --muted: rgba(238, 244, 255, 0.72);
+      --soft: rgba(238, 244, 255, 0.1);
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #5eead4;
+      --accent-2: #7c3aed;
+      --accent-3: #f59e0b;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "SF Pro Display", "Segoe UI Variable Text", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.25), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(94, 234, 212, 0.2), transparent 24%),
+        radial-gradient(circle at 50% 120%, rgba(245, 158, 11, 0.16), transparent 25%),
+        linear-gradient(180deg, #07111f 0%, #091425 38%, #050b14 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.2;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent 88%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 16px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--text);
+      color: #06101c;
+      z-index: 1000;
+    }
+    .skip-link:focus { left: 16px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 11, 20, 0.46);
+      border-bottom: 1px solid transparent;
+      transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .site-header.is-scrolled {
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      background: rgba(6, 11, 20, 0.72);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: auto;
+      height: 46px;
+      max-width: 220px;
+      object-fit: cover;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      border: 0;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color 160ms ease;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--soft);
+      color: var(--text);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--accent), #92f2e4 45%, #b2a2ff 100%);
+      color: #04101a;
+      font-weight: 700;
+      box-shadow: 0 18px 45px rgba(94,234,212,0.22);
+    }
+
+    .button-primary:hover { box-shadow: 0 22px 50px rgba(94,234,212,0.28); }
+
+    .hero {
+      position: relative;
+      padding: 48px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.9);
+      width: fit-content;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .eyebrow-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(94,234,212,0.12);
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(2.7rem, 7vw, 5.9rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+    .headline-highlight {
+      background: linear-gradient(135deg, #ffffff 0%, #9ff3e6 36%, #bcaaff 68%, #ffd285 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin-top: 18px;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+      max-width: 640px;
+    }
+
+    .metric {
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .metric span { color: var(--muted); font-size: 0.95rem; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      place-items: center;
+    }
+
+    .float-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: 0.85;
+      animation: float 14s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(94,234,212,0.42), rgba(94,234,212,0.03) 70%);
+      top: 20px;
+      right: 20px;
+    }
+    .orb-2 {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(124,58,237,0.34), rgba(124,58,237,0.03) 70%);
+      bottom: 80px;
+      left: 0;
+      animation-duration: 17s;
+    }
+    .orb-3 {
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(245,158,11,0.32), rgba(245,158,11,0.02) 70%);
+      top: 120px;
+      left: 40%;
+      animation-duration: 12s;
+    }
+
+    .mockup {
+      position: relative;
+      width: min(100%, 540px);
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06)),
+        rgba(11, 19, 35, 0.84);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: perspective(1200px) rotateY(-8deg) rotateX(5deg);
+      backdrop-filter: blur(20px);
+    }
+
+    .mockup::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.12), transparent);
+      transform: translateX(-120%);
+      animation: sheen 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .mockup-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mockup-dots {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .mockup-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+    }
+
+    .mockup-card {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .mockup-hero {
+      padding: 24px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top left, rgba(94,234,212,0.22), transparent 35%),
+        linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mockup-hero h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .mockup-hero p {
+      color: rgba(238,244,255,0.72);
+      line-height: 1.6;
+      max-width: 32ch;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+    }
+
+    .chart, .insight {
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(9, 15, 28, 0.58);
+      padding: 16px;
+    }
+
+    .chart-bars {
+      display: flex;
+      align-items: end;
+      gap: 10px;
+      min-height: 180px;
+      margin-top: 18px;
+    }
+
+    .bar {
+      flex: 1;
+      border-radius: 16px 16px 6px 6px;
+      background: linear-gradient(180deg, var(--accent), rgba(94,234,212,0.2));
+      box-shadow: 0 16px 20px rgba(94,234,212,0.15);
+      transform-origin: bottom;
+      animation: pulseBar 3.8s ease-in-out infinite;
+    }
+
+    .bar:nth-child(2) { height: 64%; animation-delay: 0.2s; }
+    .bar:nth-child(3) { height: 78%; animation-delay: 0.4s; background: linear-gradient(180deg, #b2a2ff, rgba(124,58,237,0.2)); }
+    .bar:nth-child(4) { height: 54%; animation-delay: 0.6s; background: linear-gradient(180deg, #ffd285, rgba(245,158,11,0.2)); }
+    .bar:nth-child(1) { height: 46%; animation-delay: 0s; }
+    .bar:nth-child(5) { height: 90%; animation-delay: 0.8s; }
+
+    .insight {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .insight-item {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .insight-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .social-proof {
+      padding: 22px 0 8px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.78);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      margin-bottom: 14px;
+    }
+
+    .section-tag::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    .logo-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .logo-pill {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      color: rgba(238,244,255,0.84);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 64ch;
+      margin-top: 16px;
+    }
+
+    .feature-grid, .benefit-grid, .testimonial-grid, .pricing-grid, .faq-grid, .contact-grid {
+      margin-top: 32px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.16);
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(94,234,212,0.25), rgba(124,58,237,0.14), rgba(245,158,11,0.14));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .feature-card {
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+      min-height: 220px;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+
+    .icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 1.2rem;
+    }
+
+    .feature-card p, .benefit-card p, .testimonial-card p, .price-features li, .faq-answer, .contact-details {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .showcase {
+      display: grid;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .showcase-panel {
+      padding: 22px;
+    }
+
+    .showcase-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .showcase-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(94,234,212,0.12);
+      border: 1px solid rgba(94,234,212,0.2);
+      color: #c7fff5;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(94,234,212,0.95), rgba(124,58,237,0.95));
+      color: #05101a;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .benefit-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+      padding: 24px;
+    }
+
+    .benefit-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.88);
+    }
+
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+      padding: 24px;
+    }
+
+    .quote {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .author {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(94,234,212,0.85), rgba(245,158,11,0.85));
+      color: #04101a;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-card {
+      padding: 26px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .pricing-card.featured {
+      background:
+        radial-gradient(circle at top right, rgba(94,234,212,0.18), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      border-color: rgba(94,234,212,0.22);
+      transform: translateY(-4px);
+    }
+
+    .price {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .price-note {
+      color: var(--muted);
+    }
+
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .price-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .check {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .faq-grid {
+      gap: 14px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: 0;
+      color: var(--text);
+      padding: 20px 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-weight: 700;
+    }
+
+    .faq-question span {
+      display: block;
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.06);
+      flex: 0 0 auto;
+      transition: transform 180ms ease;
+    }
+
+    .faq-item[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(94,234,212,0.16);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 22px;
+      transition: max-height 260ms ease, padding 260ms ease;
+    }
+
+    .faq-item[aria-expanded="true"] .faq-answer {
+      max-height: 220px;
+      padding: 0 22px 20px;
+    }
+
+    .cta-card {
+      padding: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(124,58,237,0.22), transparent 28%),
+        radial-gradient(circle at left bottom, rgba(94,234,212,0.16), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+      padding: 24px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.84);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(7, 14, 25, 0.75);
+      color: var(--text);
+      padding: 14px 16px;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    input:focus, textarea:focus, select:focus, .button:focus-visible, .faq-question:focus-visible {
+      outline: 2px solid rgba(94,234,212,0.8);
+      outline-offset: 2px;
+    }
+
+    textarea {
+      min-height: 126px;
+      resize: vertical;
+    }
+
+    .footer {
+      padding: 40px 0 50px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+    }
+
+    .footer-row {
+      display: grid;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+    }
+
+    .footer-links a:hover,
+    .contact-row a:hover {
+      color: var(--text);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 700ms cubic-bezier(.2,.75,.18,1), transform 700ms cubic-bezier(.2,.75,.18,1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 650ms cubic-bezier(.2,.75,.18,1), transform 650ms cubic-bezier(.2,.75,.18,1);
+    }
+    .stagger.is-visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger.is-visible > *:nth-child(1) { transition-delay: 70ms; }
+    .stagger.is-visible > *:nth-child(2) { transition-delay: 150ms; }
+    .stagger.is-visible > *:nth-child(3) { transition-delay: 230ms; }
+    .stagger.is-visible > *:nth-child(4) { transition-delay: 310ms; }
+    .stagger.is-visible > *:nth-child(5) { transition-delay: 390ms; }
+    .stagger.is-visible > *:nth-child(6) { transition-delay: 470ms; }
+
+    .ambient {
+      position: absolute;
+      inset: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(94,234,212,0.22), transparent 66%);
+      filter: blur(8px);
+      animation: drift 18s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .ambient.a1 { width: 220px; height: 220px; top: -30px; right: 3%; }
+    .ambient.a2 { width: 160px; height: 160px; bottom: 16%; left: 4%; animation-duration: 20s; }
+    .ambient.a3 { width: 100px; height: 100px; top: 48%; right: 15%; animation-duration: 14s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -18px, 0) scale(1.03); }
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      33% { transform: translate3d(14px, -18px, 0); }
+      66% { transform: translate3d(-16px, 10px, 0); }
+    }
+
+    @keyframes sheen {
+      0% { transform: translateX(-120%) skewX(-16deg); opacity: 0; }
+      18% { opacity: 0.9; }
+      40% { transform: translateX(120%) skewX(-16deg); opacity: 0; }
+      100% { transform: translateX(120%) skewX(-16deg); opacity: 0; }
+    }
+
+    @keyframes pulseBar {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(1.08); }
+    }
+
+    @media (min-width: 640px) {
+      .logo-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .feature-grid, .benefit-grid, .testimonial-grid, .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid { grid-template-columns: 1.05fr 0.95fr; }
+    }
+
+    @media (min-width: 960px) {
+      .nav-links { display: inline-flex; }
+      .hero { padding: 72px 0 48px; }
+      .hero-grid { grid-template-columns: 1.04fr 0.96fr; gap: 36px; }
+      .hero-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .showcase { grid-template-columns: 1.1fr 0.9fr; }
+      .benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-row { grid-template-columns: 1.2fr 0.8fr; }
+      .section { padding: 110px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Smart Creative Solutions home">
+        <img class="brand-mark" src="logo/logo digital dhiren.png" alt="Dhiren Digital logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="button" href="https://wa.me/9779746600564" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="button button-primary" href="#contact">Book a Free Audit</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Creative growth for business owners who need traction, fast
+          </div>
+          <h1>
+            <span class="headline-highlight">Premium creative and marketing support</span> that turns attention into revenue.
+          </h1>
+          <p class="lead">
+            We help small and medium businesses stand out with sharp branding, scroll-stopping video, motion graphics, digital marketing, and Meta Ads management.
+            If your brand looks busy but the pipeline still feels stuck, this is the clean, strategic fix.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Get My Growth Plan</a>
+            <a class="button" href="#showcase">See the Work</a>
+          </div>
+
+          <div class="hero-metrics stagger">
+            <div class="metric">
+              <strong>360°</strong>
+              <span>Creative and performance support under one roof</span>
+            </div>
+            <div class="metric">
+              <strong>Fast</strong>
+              <span>Polished campaigns built for real-world launches</span>
+            </div>
+            <div class="metric">
+              <strong>Smart</strong>
+              <span>Strategy-first execution, not random posting</span>
+            </div>
+            <div class="metric">
+              <strong>High-Trust</strong>
+              <span>Brand visuals that make your business feel premium</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="ambient a1"></div>
+          <div class="ambient a2"></div>
+          <div class="ambient a3"></div>
+          <div class="float-orb orb-1"></div>
+          <div class="float-orb orb-2"></div>
+          <div class="float-orb orb-3"></div>
+
+          <div class="mockup" aria-label="Growth dashboard preview">
+            <div class="mockup-top">
+              <div class="mockup-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="showcase-badge">Live growth system</div>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-hero">
+                <h3>Creative assets that actually sell</h3>
+                <p>Brand identity, video edits, reels, motion graphics, and Meta-ready creative designed to raise trust and drive action.</p>
+              </div>
+              <div class="dashboard-grid">
+                <div class="chart">
+                  <div class="showcase-top">
+                    <strong>Campaign momentum</strong>
+                    <span class="showcase-badge">+48% lift</span>
+                  </div>
+                  <div class="chart-bars" aria-hidden="true">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                  </div>
+                </div>
+                <div class="insight">
+                  <div class="insight-item">
+                    <strong>Meta Ads</strong>
+                    Better targeting and clearer creative hooks.
+                  </div>
+                  <div class="insight-item">
+                    <strong>Content Engine</strong>
+                    Consistent output for social, ads, and launches.
+                  </div>
+                  <div class="insight-item">
+                    <strong>Conversion Focus</strong>
+                    Every visual supports a business outcome.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-proof">
+      <div class="container reveal">
+        <div class="section-tag">Trusted by businesses ready to grow</div>
+        <div class="logo-row">
+          <div class="logo-pill">Retail & E-commerce</div>
+          <div class="logo-pill">Clinics & Service Brands</div>
+          <div class="logo-pill">Real Estate & Hospitality</div>
+          <div class="logo-pill">Startups & Local Businesses</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">What we do</div>
+          <h2>Everything your business needs to look premium and grow faster.</h2>
+          <p class="section-copy">
+            Instead of juggling separate freelancers, get one strategic partner for the entire customer journey: visual identity, short-form content, motion, paid media, and messaging that makes people act.
+          </p>
+        </div>
+
+        <div class="feature-grid stagger">
+          <article class="card feature-card">
+            <div class="icon-badge">✦</div>
+            <h3>Graphic Designing</h3>
+            <p>Social posts, brand systems, sales creatives, presentation decks, banners, and premium assets that keep your business looking sharp at every touchpoint.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon-badge">▶</div>
+            <h3>Video Editing</h3>
+            <p>Clean edits, fast-paced reels, product videos, and ad cuts engineered to hold attention and keep your story moving with confidence.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon-badge">◌</div>
+            <h3>Motion Graphics</h3>
+            <p>Elegant transitions, animated explainers, lower thirds, and visual effects that make your brand feel modern and memorable.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon-badge">⌁</div>
+            <h3>Video Graphics</h3>
+            <p>Overlays, titles, subtitles, and motion-rich visual layers that increase clarity, polish, and conversion power in every frame.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon-badge">↗</div>
+            <h3>Digital Marketing Solution</h3>
+            <p>Campaign planning, content strategy, funnel support, and performance thinking to turn creative work into measurable growth.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon-badge">◎</div>
+            <h3>Meta Ads Management</h3>
+            <p>Audience targeting, creative testing, and ad optimization built to maximize lead flow, brand visibility, and return on spend.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container showcase">
+        <div class="reveal">
+          <div class="section-tag">How it works</div>
+          <h2>A simple process that replaces chaos with clarity.</h2>
+          <p class="section-copy">
+            We begin with a strategy audit, shape a sharper creative direction, and then build assets and campaigns that keep your business moving forward without the usual back-and-forth.
+          </p>
+        </div>
+
+        <div class="card showcase-panel reveal">
+          <div class="showcase-top">
+            <strong>Creative Growth System</strong>
+            <span class="showcase-badge">Mobile-first, fast to launch</span>
+          </div>
+          <div class="process-list">
+            <div class="process-step">
+              <div class="step-num">1</div>
+              <div>
+                <h3>Discover the bottleneck</h3>
+                <p>We identify what is slowing growth: weak visuals, inconsistent content, poor ad performance, or unclear offer messaging.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">2</div>
+              <div>
+                <h3>Design the system</h3>
+                <p>We create the visual direction, content structure, and campaign framework around your brand and target audience.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">3</div>
+              <div>
+                <h3>Launch and optimize</h3>
+                <p>We publish, test, refine, and improve continuously so your marketing becomes more effective over time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="showcase">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">Product showcase</div>
+          <h2>A premium creative stack built for small teams with big goals.</h2>
+          <p class="section-copy">
+            From the first impression to the final click, every touchpoint is designed to feel cohesive, modern, and conversion-focused.
+          </p>
+        </div>
+
+        <div class="showcase">
+          <article class="card showcase-panel reveal">
+            <div class="showcase-top">
+              <strong>Brand presence that feels established</strong>
+              <span class="showcase-badge">Visual identity refresh</span>
+            </div>
+            <p class="section-copy" style="margin-top:0;">
+              Clean design systems, campaign graphics, and content templates that help even smaller businesses look like they are already winning.
+            </p>
+          </article>
+
+          <article class="card showcase-panel reveal">
+            <div class="showcase-top">
+              <strong>Attention-grabbing ads and short-form content</strong>
+              <span class="showcase-badge">Reels + Meta ads</span>
+            </div>
+            <p class="section-copy" style="margin-top:0;">
+              Hook-driven creative, sharper editing, and ad-ready visuals that improve retention, click-through, and lead quality.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benefits">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">Why it works</div>
+          <h2>Built for business owners who need momentum, not more complexity.</h2>
+          <p class="section-copy">
+            The goal is not just attractive design. It is a cleaner sales story, stronger brand confidence, and a marketing system that supports growth with less stress.
+          </p>
+        </div>
+
+        <div class="benefit-grid stagger">
+          <article class="card benefit-card">
+            <div class="benefit-stat">01 · Faster trust</div>
+            <h3>Look more credible from the first second.</h3>
+            <p>Your audience judges quickly. Premium visuals and polished motion help you earn trust before you ever pitch a sale.</p>
+          </article>
+          <article class="card benefit-card">
+            <div class="benefit-stat">02 · Better attention</div>
+            <h3>Keep people watching long enough to care.</h3>
+            <p>Strong editing and motion graphics keep content engaging so your message can actually land.</p>
+          </article>
+          <article class="card benefit-card">
+            <div class="benefit-stat">03 · Smarter spend</div>
+            <h3>Make ads work harder with sharper creative.</h3>
+            <p>Clearer hooks, cleaner visuals, and targeted Meta campaigns help reduce wasted budget.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">Client results</div>
+          <h2>What business owners want most: clarity, relief, and results.</h2>
+          <p class="section-copy">
+            These stories reflect the transformation business owners usually need: less guesswork, stronger presentation, and creative that starts pulling its weight.
+          </p>
+        </div>
+
+        <div class="testimonial-grid stagger">
+          <article class="card testimonial-card">
+            <p class="quote">"We finally looked as professional online as we do in real life. The new creatives made our brand feel far more trustworthy."</p>
+            <div class="author">
+              <div class="avatar">A</div>
+              <div>
+                <strong>Amrita Shrestha</strong>
+                <p>Retail owner</p>
+              </div>
+            </div>
+          </article>
+          <article class="card testimonial-card">
+            <p class="quote">"Our Meta ads became much easier to manage because the creative was clearer. Leads improved and our team had less stress."</p>
+            <div class="author">
+              <div class="avatar">R</div>
+              <div>
+                <strong>Rajan K.C.</strong>
+                <p>Service business founder</p>
+              </div>
+            </div>
+          </article>
+          <article class="card testimonial-card">
+            <p class="quote">"The videos and motion graphics gave us a premium presence that immediately set us apart from local competitors."</p>
+            <div class="author">
+              <div class="avatar">S</div>
+              <div>
+                <strong>Sabina Gurung</strong>
+                <p>Hospitality business</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">Pricing</div>
+          <h2>Flexible plans for businesses at different stages of growth.</h2>
+          <p class="section-copy">
+            Start with a focused setup or choose a more complete growth partnership. Every plan is designed to keep things premium, practical, and easy to move on.
+          </p>
+        </div>
+
+        <div class="pricing-grid stagger">
+          <article class="card pricing-card">
+            <h3>Starter</h3>
+            <div class="price">Custom</div>
+            <p class="price-note">For a single campaign, design sprint, or launch asset set.</p>
+            <ul class="price-features">
+              <li><span class="check">✓</span> Graphic design or video editing package</li>
+              <li><span class="check">✓</span> Brand-aligned creative direction</li>
+              <li><span class="check">✓</span> Ideal for small updates and promotions</li>
+            </ul>
+          </article>
+
+          <article class="card pricing-card featured">
+            <div class="showcase-badge">Most popular</div>
+            <h3>Growth</h3>
+            <div class="price">Custom</div>
+            <p class="price-note">For ongoing social content, motion, and ad support.</p>
+            <ul class="price-features">
+              <li><span class="check">✓</span> Content creation and editing support</li>
+              <li><span class="check">✓</span> Motion graphics and campaign visuals</li>
+              <li><span class="check">✓</span> Meta ads management and optimization</li>
+              <li><span class="check">✓</span> Strategy check-ins and performance review</li>
+            </ul>
+          </article>
+
+          <article class="card pricing-card">
+            <h3>Growth+</h3>
+            <div class="price">Custom</div>
+            <p class="price-note">For brands that want a complete creative and marketing system.</p>
+            <ul class="price-features">
+              <li><span class="check">✓</span> Full-service creative production</li>
+              <li><span class="check">✓</span> Ad creative testing and performance tuning</li>
+              <li><span class="check">✓</span> Brand refresh and launch support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-tag">FAQ</div>
+          <h2>Quick answers for busy business owners.</h2>
+        </div>
+
+        <div class="faq-grid stagger">
+          <article class="card faq-item" aria-expanded="false">
+            <button class="faq-question" type="button">
+              <span>Do you work with small businesses that are just starting to grow?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. The service is designed specifically to help small and medium businesses look more premium, communicate more clearly, and grow with smart creative support.
+            </div>
+          </article>
+
+          <article class="card faq-item" aria-expanded="false">
+            <button class="faq-question" type="button">
+              <span>Can you manage both content and Meta ads?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely. Creative and performance work are strongest when they are connected, so we can handle both the content side and the ads side in one place.
+            </div>
+          </article>
+
+          <article class="card faq-item" aria-expanded="false">
+            <button class="faq-question" type="button">
+              <span>What kind of businesses is this best for?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              It works well for local businesses, service companies, retail brands, hospitality, clinics, and growing startups that need better visuals and stronger lead generation.
+            </div>
+          </article>
+
+          <article class="card faq-item" aria-expanded="false">
+            <button class="faq-question" type="button">
+              <span>How do I contact you to get started?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Use the form below, message on WhatsApp at 9746600564, or visit us in Kupandol. You can also share your details in the lead form and we’ll follow up.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="card cta-card reveal">
+          <div class="section-tag">Ready to grow</div>
+          <div class="contact-grid">
+            <div>
+              <h2>Let’s turn your business into something people remember.</h2>
+              <p class="section-copy">
+                If you are struggling with weak visuals, inconsistent content, or ads that are not performing, this is the right moment to simplify and upgrade your system.
+              </p>
+              <div class="contact-details">
+                <div class="contact-row">
+                  <span>Email</span>
+                  <span>info.dhirendrasingh.com.np</span>
+                </div>
+                <div class="contact-row">
+                  <span>WhatsApp</span>
+                  <a href="https://wa.me/9779746600564" target="_blank" rel="noopener noreferrer">9746600564</a>
+                </div>
+                <div class="contact-row">
+                  <span>Location</span>
+                  <span>Kupandol</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card contact-card" style="background: rgba(7,14,25,0.52);">
+              <form class="form" id="leadForm">
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="name">Your name</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" required />
+                  </div>
+                  <div class="field">
+                    <label for="business">Business name</label>
+                    <input id="business" name="business" type="text" placeholder="Your company or shop" required />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required />
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone / WhatsApp</label>
+                    <input id="phone" name="phone" type="tel" placeholder="9746600564" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="goal">What do you need help with?</label>
+                  <select id="goal" name="goal">
+                    <option>Graphic design</option>
+                    <option>Video editing</option>
+                    <option>Motion graphics</option>
+                    <option>Digital marketing</option>
+                    <option>Meta ads management</option>
+                    <option>All-in-one support</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="message">Tell us what is struggling right now</label>
+                  <textarea id="message" name="message" placeholder="For example: we need better ads, stronger reels, or a premium brand refresh."></textarea>
+                </div>
+                <button class="button button-primary" type="submit">Submit My Details</button>
+                <p class="price-note">This form is designed as a clean lead capture experience. You can connect it to your preferred backend or email workflow later.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <a class="brand" href="#top">
+          <img class="brand-mark" src="logo/logo digital dhiren.png" alt="Dhiren Digital logo" />
+          <span>Smart Creative Solutions</span>
+        </a>
+        <p class="section-copy" style="margin-top:14px;">
+          Helping small and medium businesses grow with smart creative solutions, premium design, and performance-driven marketing.
+        </p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="#services">Services</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const revealTargets = document.querySelectorAll('.reveal, .stagger');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const leadForm = document.getElementById('leadForm');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+
+    revealTargets.forEach((target) => revealObserver.observe(target));
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-question');
+      button.addEventListener('click', () => {
+        const expanded = item.getAttribute('aria-expanded') === 'true';
+        faqItems.forEach((other) => other.setAttribute('aria-expanded', 'false'));
+        item.setAttribute('aria-expanded', String(!expanded));
+      });
+    });
+
+    leadForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim() || 'there';
+      const email = document.getElementById('email').value.trim();
+      const business = document.getElementById('business').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const goal = document.getElementById('goal').value;
+      const message = document.getElementById('message').value.trim();
+
+      const payload = [
+        `Name: ${name}`,
+        `Business: ${business}`,
+        `Email: ${email}`,
+        `Phone: ${phone || 'not provided'}`,
+        `Need: ${goal}`,
+        `Message: ${message || 'not provided'}`
+      ].join('\n');
+
+      const whatsappMessage = encodeURIComponent(
+        `New inquiry from the landing page:\n\n${payload}`
+      );
+
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(payload).catch(() => {});
+      }
+
+      window.open(`https://wa.me/9779746600564?text=${whatsappMessage}`, '_blank', 'noopener,noreferrer');
+
+      leadForm.reset();
+      setTimeout(() => {
+        alert(`Thanks ${name}. Your details are ready to send. We opened WhatsApp for a quick follow-up. If needed, message 9746600564 directly.`);
+      }, 120);
+    });
+  </script>
+</body>
+</html>
