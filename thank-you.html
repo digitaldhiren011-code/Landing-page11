@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< ours
   <meta name="description" content="Thank You | Digital Dhiren" />
   <title>Thank You | Digital Dhiren</title>
   <style>
@@ -226,6 +227,74 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 16px;
+=======
+  <meta name="description" content="Thank you for contacting Smart Creative Solutions." />
+  <title>Thank You | Smart Creative Solutions</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --text: #eef4ff;
+      --muted: rgba(238, 244, 255, 0.74);
+      --accent: #5eead4;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "SF Pro Display", "Segoe UI Variable Text", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.28), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(94, 234, 212, 0.2), transparent 24%),
+        linear-gradient(180deg, #07111f 0%, #091425 38%, #050b14 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(720px, 100%);
+      padding: 32px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(94,234,212,0.12);
+      border: 1px solid rgba(94,234,212,0.2);
+      color: #c7fff5;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+    p {
+      margin: 16px auto 0;
+      max-width: 56ch;
+      line-height: 1.8;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+>>>>>>> theirs
     }
     .button {
       display: inline-flex;
@@ -234,6 +303,7 @@
       min-height: 48px;
       padding: 0 18px;
       border-radius: 999px;
+<<<<<<< ours
       border: 1px solid var(--line);
       background: white;
       color: var(--primary);
@@ -328,10 +398,21 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
+=======
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #5eead4, #92f2e4 45%, #b2a2ff 100%);
+      color: #04101a;
+      font-weight: 700;
+      box-shadow: 0 18px 45px rgba(94,234,212,0.22);
+>>>>>>> theirs
     }
   </style>
 </head>
 <body>
+<<<<<<< ours
   <div class="page">
     <header class="topbar">
       <div class="container">
@@ -409,5 +490,19 @@
       </div>
     </footer>
   </div>
+=======
+  <main class="card">
+    <div class="badge">Message received</div>
+    <h1>Thank you.</h1>
+    <p>
+      Your details have been sent successfully. We’ll review your request and get back to you soon.
+      If you need urgent help, message us on WhatsApp at 9746600564.
+    </p>
+    <div class="actions">
+      <a class="button primary" href="index.html">Back to Home</a>
+      <a class="button" href="https://wa.me/9779746600564" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+    </div>
+  </main>
+>>>>>>> theirs
 </body>
 </html>
