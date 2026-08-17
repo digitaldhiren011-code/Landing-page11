@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< ours
   <meta name="description" content="Thank You | Digital Dhiren" />
   <title>Thank You | Digital Dhiren</title>
   <style>
@@ -11,7 +10,6 @@
       --primary: #000926;
       --accent: #2b8e7c;
       --bg: #f7f8fb;
-      --card: #ffffff;
       --text: #17202a;
       --muted: #5d6775;
       --line: rgba(17, 24, 39, 0.08);
@@ -30,49 +28,20 @@
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    .container {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-    .page {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-    .topbar {
-      padding: 22px 0 10px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    .brand img {
-      height: 48px;
-      width: auto;
-    }
-    main {
-      display: grid;
-      place-items: center;
-      padding: 24px 0 48px;
-    }
-    .hero {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      align-items: center;
-    }
-    .hero-card {
-      padding: 28px;
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.82);
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .page { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
+    .topbar { padding: 22px 0 10px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.01em; }
+    .brand img { height: 48px; width: auto; }
+    main { display: grid; place-items: center; padding: 24px 0 48px; }
+    .hero { width: 100%; display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; }
+    .panel {
+      background: rgba(255,255,255,0.82);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
     }
+    .hero-card { padding: 28px; border-radius: 28px; }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -111,8 +80,7 @@
       place-items: center;
       min-height: 280px;
       border-radius: 28px;
-      background:
-        linear-gradient(135deg, rgba(0, 9, 38, 0.95), rgba(43, 142, 124, 0.9));
+      background: linear-gradient(135deg, rgba(0, 9, 38, 0.95), rgba(43, 142, 124, 0.9));
       color: white;
       box-shadow: var(--shadow);
       position: relative;
@@ -128,19 +96,8 @@
       filter: blur(2px);
       animation: float 10s ease-in-out infinite;
     }
-    .success-visual::before {
-      width: 220px;
-      height: 220px;
-      top: -70px;
-      right: -60px;
-    }
-    .success-visual::after {
-      width: 160px;
-      height: 160px;
-      bottom: -60px;
-      left: -40px;
-      animation-duration: 13s;
-    }
+    .success-visual::before { width: 220px; height: 220px; top: -70px; right: -60px; }
+    .success-visual::after { width: 160px; height: 160px; bottom: -60px; left: -40px; animation-duration: 13s; }
     .check {
       width: 120px;
       height: 120px;
@@ -156,11 +113,7 @@
       position: relative;
       z-index: 1;
     }
-    .steps {
-      margin-top: 18px;
-      display: grid;
-      gap: 14px;
-    }
+    .steps { margin-top: 18px; display: grid; gap: 14px; }
     .section-title {
       margin: 0 0 14px;
       font-size: 1.05rem;
@@ -169,26 +122,17 @@
       color: var(--accent);
       font-weight: 700;
     }
-    .step-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
+    .step-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
     .step {
       padding: 20px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--line);
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 16px;
       align-items: start;
       transition: transform 180ms ease, box-shadow 180ms ease;
     }
-    .step:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(0, 9, 38, 0.08);
-    }
+    .step:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(0, 9, 38, 0.08); }
     .step-icon {
       width: 44px;
       height: 44px;
@@ -199,103 +143,11 @@
       color: var(--accent);
       font-weight: 800;
     }
-    .step h3 {
-      margin: 0 0 6px;
-      font-size: 1.1rem;
-      color: var(--primary);
-    }
-    .step p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .cta {
-      margin-top: 18px;
-      padding: 24px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.84);
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 40px rgba(0, 9, 38, 0.08);
-    }
-    .cta h2 {
-      margin: 0;
-      font-size: clamp(1.4rem, 2.8vw, 2rem);
-      letter-spacing: -0.03em;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-=======
-  <meta name="description" content="Thank you for contacting Smart Creative Solutions." />
-  <title>Thank You | Smart Creative Solutions</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --text: #eef4ff;
-      --muted: rgba(238, 244, 255, 0.74);
-      --accent: #5eead4;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: "Avenir Next", "SF Pro Display", "Segoe UI Variable Text", "Helvetica Neue", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124, 58, 237, 0.28), transparent 28%),
-        radial-gradient(circle at 80% 10%, rgba(94, 234, 212, 0.2), transparent 24%),
-        linear-gradient(180deg, #07111f 0%, #091425 38%, #050b14 100%);
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      width: min(720px, 100%);
-      padding: 32px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      text-align: center;
-    }
-    .badge {
-      display: inline-flex;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(94,234,212,0.12);
-      border: 1px solid rgba(94,234,212,0.2);
-      color: #c7fff5;
-      margin-bottom: 18px;
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-    }
-    p {
-      margin: 16px auto 0;
-      max-width: 56ch;
-      line-height: 1.8;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 28px;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
->>>>>>> theirs
-    }
+    .step h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--primary); }
+    .step p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .cta { margin-top: 18px; padding: 24px; border-radius: 24px; }
+    .cta h2 { margin: 0; font-size: clamp(1.4rem, 2.8vw, 2rem); letter-spacing: -0.03em; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
     .button {
       display: inline-flex;
       align-items: center;
@@ -303,44 +155,23 @@
       min-height: 48px;
       padding: 0 18px;
       border-radius: 999px;
-<<<<<<< ours
       border: 1px solid var(--line);
       background: white;
       color: var(--primary);
       font-weight: 600;
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(0, 9, 38, 0.08);
-    }
-    .button.primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      border-color: transparent;
-    }
+    .button:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(0, 9, 38, 0.08); }
+    .button.primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-color: transparent; }
     footer {
       padding: 24px 0 34px;
       border-top: 1px solid var(--line);
       background: rgba(255,255,255,0.5);
       backdrop-filter: blur(10px);
     }
-    .footer-grid {
-      display: grid;
-      gap: 16px;
-      align-items: center;
-    }
-    .tagline {
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .socials {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
+    .footer-grid { display: grid; gap: 16px; align-items: center; }
+    .tagline { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
+    .socials { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
     .social {
       width: 42px;
       height: 42px;
@@ -353,43 +184,19 @@
       font-size: 0.95rem;
       font-weight: 700;
     }
-    .copyright {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      animation: reveal 700ms ease forwards;
-    }
+    .copyright { color: var(--muted); font-size: 0.95rem; }
+    .reveal { opacity: 0; transform: translateY(16px); animation: reveal 700ms ease forwards; }
     .delay-1 { animation-delay: 120ms; }
     .delay-2 { animation-delay: 220ms; }
     .delay-3 { animation-delay: 320ms; }
-    @keyframes reveal {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.04); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+    @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     @media (min-width: 900px) {
-      .hero {
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 28px;
-      }
-      .step-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .footer-grid {
-        grid-template-columns: 1.1fr auto auto;
-      }
-      .socials {
-        justify-content: flex-end;
-      }
+      .hero { grid-template-columns: 1.05fr 0.95fr; gap: 28px; }
+      .step-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: 1.1fr auto auto; }
+      .socials { justify-content: flex-end; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -398,21 +205,10 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-=======
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-    .button.primary {
-      background: linear-gradient(135deg, #5eead4, #92f2e4 45%, #b2a2ff 100%);
-      color: #04101a;
-      font-weight: 700;
-      box-shadow: 0 18px 45px rgba(94,234,212,0.22);
->>>>>>> theirs
     }
   </style>
 </head>
 <body>
-<<<<<<< ours
   <div class="page">
     <header class="topbar">
       <div class="container">
@@ -424,12 +220,10 @@
 
     <main>
       <div class="container hero">
-        <section class="hero-card reveal">
+        <section class="hero-card panel reveal">
           <div class="eyebrow"><span class="dot"></span>Submission successful</div>
           <h1>Thank You! Your Message Has Been Received.</h1>
-          <p class="subheading">
-            Thanks for reaching out. I'll review your message and get back to you within 24 hours.
-          </p>
+          <p class="subheading">Thanks for reaching out. I'll review your message and get back to you within 24 hours.</p>
         </section>
 
         <section class="success-visual reveal delay-1" aria-label="Success confirmation">
@@ -440,30 +234,21 @@
       <div class="container steps">
         <p class="section-title reveal delay-1">What happens next</p>
         <div class="step-grid">
-          <article class="step reveal delay-1">
+          <article class="step panel reveal delay-1">
             <div class="step-icon">1</div>
-            <div>
-              <h3>Message Received</h3>
-              <p>Your inquiry has been successfully submitted.</p>
-            </div>
+            <div><h3>Message Received</h3><p>Your inquiry has been successfully submitted.</p></div>
           </article>
-          <article class="step reveal delay-2">
+          <article class="step panel reveal delay-2">
             <div class="step-icon">2</div>
-            <div>
-              <h3>Review &amp; Response</h3>
-              <p>I'll review your requirements carefully.</p>
-            </div>
+            <div><h3>Review &amp; Response</h3><p>I'll review your requirements carefully.</p></div>
           </article>
-          <article class="step reveal delay-3">
+          <article class="step panel reveal delay-3">
             <div class="step-icon">3</div>
-            <div>
-              <h3>Let's Connect</h3>
-              <p>You'll receive a reply within 24 hours.</p>
-            </div>
+            <div><h3>Let's Connect</h3><p>You'll receive a reply within 24 hours.</p></div>
           </article>
         </div>
 
-        <section class="cta reveal delay-2">
+        <section class="cta panel reveal delay-2">
           <h2>Need to share more details?</h2>
           <div class="actions">
             <a class="button primary" href="index.html">Back to Home</a>
@@ -490,19 +275,5 @@
       </div>
     </footer>
   </div>
-=======
-  <main class="card">
-    <div class="badge">Message received</div>
-    <h1>Thank you.</h1>
-    <p>
-      Your details have been sent successfully. We’ll review your request and get back to you soon.
-      If you need urgent help, message us on WhatsApp at 9746600564.
-    </p>
-    <div class="actions">
-      <a class="button primary" href="index.html">Back to Home</a>
-      <a class="button" href="https://wa.me/9779746600564" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-    </div>
-  </main>
->>>>>>> theirs
 </body>
 </html>

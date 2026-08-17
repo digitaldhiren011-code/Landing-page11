@@ -1483,6 +1483,8 @@
     const header = document.getElementById('siteHeader');
     const revealTargets = document.querySelectorAll('.reveal, .stagger');
     const faqItems = document.querySelectorAll('.faq-item');
+    const leadForm = document.getElementById('leadForm');
+
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -1505,6 +1507,8 @@
         faqItems.forEach((other) => other.setAttribute('aria-expanded', 'false'));
         item.setAttribute('aria-expanded', String(!expanded));
       });
+    });
+
     leadForm.addEventListener('submit', async (event) => {
       event.preventDefault();
 
@@ -1535,11 +1539,10 @@
         window.location.href = './thank-you.html';
       } catch (error) {
         window.location.href = 'mailto:digitaldhiren011@gmail.com?subject=' + encodeURIComponent('New lead from Smart Creative Solutions') + '&body=' + encodeURIComponent(
-          `Name: ${payload.name}\nBusiness: ${payload.business}\nEmail: ${payload.email}\nPhone: ${payload.phone || 'not provided'}\nNeed: ${payload.goal}\nMessage: ${payload.message || 'not provided'}`
+          'Name: ' + payload.name + '\nBusiness: ' + payload.business + '\nEmail: ' + payload.email + '\nPhone: ' + (payload.phone || 'not provided') + '\nNeed: ' + payload.goal + '\nMessage: ' + (payload.message || 'not provided')
         );
       }
     });
-
   </script>
 </body>
 </html>
