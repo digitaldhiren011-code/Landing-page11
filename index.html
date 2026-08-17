@@ -1399,7 +1399,7 @@
               <div class="contact-details">
                 <div class="contact-row">
                   <span>Email</span>
-                  <span>info.dhirendrasingh.com.np</span>
+                  <a href="mailto:digitaldhiren011@gmail.com">digitaldhiren011@gmail.com</a>
                 </div>
                 <div class="contact-row">
                   <span>WhatsApp</span>
@@ -1413,7 +1413,11 @@
             </div>
 
             <div class="card contact-card" style="background: rgba(7,14,25,0.52);">
-              <form class="form" id="leadForm">
+              <form class="form" id="leadForm" action="https://formsubmit.co/digitaldhiren011@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="New lead from Smart Creative Solutions" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="./thank-you.html" />
                 <div class="field-grid">
                   <div class="field">
                     <label for="name">Your name</label>
@@ -1448,7 +1452,7 @@
                   <textarea id="message" name="message" placeholder="For example: we need better ads, stronger reels, or a premium brand refresh."></textarea>
                 </div>
                 <button class="button button-primary" type="submit">Submit My Details</button>
-                <p class="price-note">This form is designed as a clean lead capture experience. You can connect it to your preferred backend or email workflow later.</p>
+                <p class="price-note">After submitting, you’ll be taken to a thank-you page and the details will be sent to your email inbox.</p>
               </form>
             </div>
           </div>
@@ -1482,8 +1486,6 @@
     const header = document.getElementById('siteHeader');
     const revealTargets = document.querySelectorAll('.reveal, .stagger');
     const faqItems = document.querySelectorAll('.faq-item');
-    const leadForm = document.getElementById('leadForm');
-
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -1508,39 +1510,6 @@
       });
     });
 
-    leadForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const name = document.getElementById('name').value.trim() || 'there';
-      const email = document.getElementById('email').value.trim();
-      const business = document.getElementById('business').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const goal = document.getElementById('goal').value;
-      const message = document.getElementById('message').value.trim();
-
-      const payload = [
-        `Name: ${name}`,
-        `Business: ${business}`,
-        `Email: ${email}`,
-        `Phone: ${phone || 'not provided'}`,
-        `Need: ${goal}`,
-        `Message: ${message || 'not provided'}`
-      ].join('\n');
-
-      const whatsappMessage = encodeURIComponent(
-        `New inquiry from the landing page:\n\n${payload}`
-      );
-
-      if (navigator.clipboard?.writeText) {
-        navigator.clipboard.writeText(payload).catch(() => {});
-      }
-
-      window.open(`https://wa.me/9779746600564?text=${whatsappMessage}`, '_blank', 'noopener,noreferrer');
-
-      leadForm.reset();
-      setTimeout(() => {
-        alert(`Thanks ${name}. Your details are ready to send. We opened WhatsApp for a quick follow-up. If needed, message 9746600564 directly.`);
-      }, 120);
-    });
   </script>
 </body>
 </html>
